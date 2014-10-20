@@ -1,7 +1,7 @@
-//    AwesomeIcon is a JavaFX library to use Fontawesome
+//    FontAwesomeIcon is a JavaFX library to use Fontawesome
 //    Copyright (C) 2014 Adrián Romero Corchado.
 //
-//    This file is part of AwesomeIcon
+//    This file is part of FontAwesomeIcon
 //
 //     Licensed under the Apache License, Version 2.0 (the "License");
 //     you may not use this file except in compliance with the License.
@@ -17,14 +17,17 @@
 
 package com.adr.awesomeicon;
 
+import com.adr.awesomeicon.transitions.IconTransition;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.geometry.Orientation;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Font;
 
 /**
  *
@@ -34,19 +37,37 @@ public class Icon extends Region {
 
     private final Label label;
     
-    public Icon(AwesomeIcon iconchar, double iconsize, String... iconstyles) {
+    public static Node createIcon(IconFont iconchar, double iconsize, IconTransition tr, String... iconstyles) {
+        Label label = new Label();
+        label.getStyleClass().add("awesome");
+        label.getStyleClass().addAll(iconstyles);
+        label.setFont(Font.font(iconchar.getFontName(), iconsize));
+        label.setText(iconchar.getString());
+        if (tr != null) {
+            tr.applyTransition(label);
+        }
+        return label;
+    }
+    
+    public static Node createIcon(IconFont iconchar, double iconsize, String... iconstyles) {
+        return createIcon(iconchar, iconsize, null, iconstyles);
+    }
+    
+    public Icon(IconFont iconchar, double iconsize, String... iconstyles) {
 
         size = new SimpleDoubleProperty(this, "Size", iconsize);
-        icon = new SimpleObjectProperty<AwesomeIcon>(this, "Icon", iconchar);
+        icon = new SimpleObjectProperty<IconFont>(this, "Icon", iconchar);
         
         label = new Label(); 
         label.getStyleClass().add("awesome");
         label.textProperty().bind(Bindings.createStringBinding(() -> {
-            AwesomeIcon c = iconProperty().get();
+            IconFont c = fontIconProperty().get();
             return c == null ? "" : c.getString();
-        }, iconProperty()));       
-        label.fontProperty().bind(Bindings.createObjectBinding(() -> FontAwesome.getFont(sizeProperty().getValue())
-                , sizeProperty()));
+        }, fontIconProperty()));
+        label.fontProperty().bind(Bindings.createObjectBinding(() -> {
+            IconFont c = fontIconProperty().get();
+            return c == null ? Font.getDefault() : Font.font(iconchar.getFontName(), sizeProperty().getValue());
+        } , sizeProperty(), fontIconProperty()));
         getChildren().add(label);    
         getStyleClass().addAll(iconstyles);
         
@@ -67,10 +88,10 @@ public class Icon extends Region {
     public final void setSize(double value) { sizeProperty().setValue(value); }
     public final double getSize() { return size.getValue(); }        
     
-    private ObjectProperty<AwesomeIcon> icon;
-    public final ObjectProperty<AwesomeIcon> iconProperty() { return icon; }
-    public final void setIcon(AwesomeIcon value) { iconProperty().setValue(value); }
-    public final AwesomeIcon getIcon() { return icon.getValue(); } 
+    private ObjectProperty<IconFont> icon;
+    public final ObjectProperty<IconFont> fontIconProperty() { return icon; }
+    public final void setFontIcon(IconFont value) { fontIconProperty().setValue(value); }
+    public final IconFont getFontIcon() { return icon.getValue(); } 
     
     @Override 
     public final Orientation getContentBias() {
@@ -78,32 +99,32 @@ public class Icon extends Region {
     }    
     
     @Override 
-    public final double computeMaxWidth(double height) {
+    protected final double computeMaxWidth(double height) {
         return label.maxWidth(height);
     }
 
     @Override 
-    public final double computeMaxHeight(double width) {
+    protected final double computeMaxHeight(double width) {
         return label.maxHeight(width);
     }
     
     @Override 
-    public final double computeMinWidth(double height) {
+    protected final double computeMinWidth(double height) {
         return label.minWidth(height);
     }
 
     @Override 
-    public final double computeMinHeight(double width) {
+    protected final double computeMinHeight(double width) {
         return label.minHeight(width);
     }
     
     @Override 
-    public final double computePrefWidth(double height) {
+    protected final double computePrefWidth(double height) {
         return label.prefWidth(height);
     }
 
     @Override
-    public final double computePrefHeight(double width) {
+    protected final double computePrefHeight(double width) {
         return label.prefHeight(width);
     }
 }

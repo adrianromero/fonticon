@@ -21,12 +21,12 @@ package com.adr.awesomeicon;
  *
  * @author adrian
  */
-public enum AwesomeStyle {
+public enum StylesGallery {
     BASE("/com/adr/awesomeicon/styles/base.css");    
      
     private final String path;
 
-    private AwesomeStyle(String path) {
+    private StylesGallery(String path) {
         this.path = path;
     }
 
