@@ -37,27 +37,27 @@
     -fa-icon-color: rgb(255, 0, 0);
 }
 
-.fa-shadow > .awesome {  
+.fa-shadow > .fonticon {  
     -fx-effect: innershadow(three-pass-box , derive(-fa-icon-color,-70%) , 0.1em, 0.0 , 0.07em, 0.07em );
     -fx-text-fill: linear-gradient(to bottom, derive(-fa-icon-color,20%) 10%, derive(-fa-icon-color,-40%) 80%);       
 }
 
-.button:hover > .fa-shadow > .awesome {
+.button:hover > .fa-shadow > .fonticon {
     -fx-effect: dropshadow( three-pass-box , derive(-fa-icon-color, 0%) , 0.01em, 0.0 , 0, 0);
 }
 
-.fa-plain > .awesome {  
+.fa-plain > .fonticon {  
     -fx-text-fill: derive(-fa-icon-color, -20%);       
 }
 
-.button:hover > .fa-plain > .awesome {
+.button:hover > .fa-plain > .fonticon {
     -fx-text-fill: derive(-fa-icon-color, 0%);       
 }
 
-.fa-stack-base > .awesome {
+.fa-stack-base > .fonticon {
     -fx-text-fill: linear-gradient(derive(-fa-icon-color, 70%) 0%, derive(-fa-icon-color, 30%) 70%, derive(-fa-icon-color, 10%) 85%);
 }
 
-.fa-dropshadow > .awesome {
+.fa-dropshadow > .fonticon {
     -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.5) , 8 , 0.0 , 0 , 0 );
 }

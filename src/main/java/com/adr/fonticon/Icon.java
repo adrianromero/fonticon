@@ -39,7 +39,7 @@ public class Icon extends Region {
     
     public static Node createIcon(IconFont iconchar, double iconsize, IconTransition tr, String... iconstyles) {
         Label label = new Label();
-        label.getStyleClass().add("awesome");
+        label.getStyleClass().add("fonticon");
         label.getStyleClass().addAll(iconstyles);
         label.setFont(Font.font(iconchar.getFontName(), iconsize));
         label.setText(iconchar.getString());
@@ -59,7 +59,7 @@ public class Icon extends Region {
         icon = new SimpleObjectProperty<IconFont>(this, "Icon", iconchar);
         
         label = new Label(); 
-        label.getStyleClass().add("awesome");
+        label.getStyleClass().add("fonticon");
         label.textProperty().bind(Bindings.createStringBinding(() -> {
             IconFont c = fontIconProperty().get();
             return c == null ? "" : c.getString();

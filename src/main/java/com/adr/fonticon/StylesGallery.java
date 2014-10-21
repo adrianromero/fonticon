@@ -22,7 +22,7 @@ package com.adr.fonticon;
  * @author adrian
  */
 public enum StylesGallery {
-    BASE("/com/adr/awesomeicon/styles/base.css");    
+    BASE("/com/adr/fonticon/styles/base.css");    
      
     private final String path;
 
