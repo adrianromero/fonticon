@@ -643,7 +643,7 @@ public enum IonIcons implements IconFont {
     
     static {
         try {
-            IONICONS = Font.loadFont(IonIcons.class.getResourceAsStream("fonts/ioniocons.ttf"), 10.0).getName();    
+            IONICONS = Font.loadFont(IonIcons.class.getResourceAsStream("fonts/ionicons.ttf"), 10.0).getName();    
         } catch (Exception e) {
         }
     } 

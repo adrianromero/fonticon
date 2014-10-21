@@ -17,47 +17,47 @@
      limitations under the License
 */
 
-.fa-iconblue {
-    -fa-icon-color: rgb(120, 180, 255);    
+.fi-iconblue {
+    -fi-icon-color: rgb(120, 180, 255);    
 }
 
-.fa-iconwhite {
-    -fa-icon-color: rgb(255, 255, 255);    
+.fi-iconwhite {
+    -fi-icon-color: rgb(255, 255, 255);    
 }
 
-.fa-icondarkblue {
-    -fa-icon-color: rgb(0, 0, 150);    
+.fi-icondarkblue {
+    -fi-icon-color: rgb(0, 0, 150);    
 }
 
-.fa-icongreen {
-    -fa-icon-color: rgb(0, 255, 0);    
+.fi-icongreen {
+    -fi-icon-color: rgb(0, 255, 0);    
 }
 
-.fa-iconred {    
-    -fa-icon-color: rgb(255, 0, 0);
+.fi-iconred {    
+    -fi-icon-color: rgb(255, 0, 0);
 }
 
-.fa-shadow > .fonticon {  
-    -fx-effect: innershadow(three-pass-box , derive(-fa-icon-color,-70%) , 0.1em, 0.0 , 0.07em, 0.07em );
-    -fx-text-fill: linear-gradient(to bottom, derive(-fa-icon-color,20%) 10%, derive(-fa-icon-color,-40%) 80%);       
+.fi-shadow > .fonticon {  
+    -fx-effect: innershadow(three-pass-box , derive(-fi-icon-color,-70%) , 0.1em, 0.0 , 0.07em, 0.07em );
+    -fx-text-fill: linear-gradient(to bottom, derive(-fi-icon-color,20%) 10%, derive(-fi-icon-color,-40%) 80%);       
 }
 
-.button:hover > .fa-shadow > .fonticon {
-    -fx-effect: dropshadow( three-pass-box , derive(-fa-icon-color, 0%) , 0.01em, 0.0 , 0, 0);
+.button:hover > .fi-shadow > .fonticon {
+    -fx-effect: dropshadow( three-pass-box , derive(-fi-icon-color, 0%) , 0.01em, 0.0 , 0, 0);
 }
 
-.fa-plain > .fonticon {  
-    -fx-text-fill: derive(-fa-icon-color, -20%);       
+.fi-plain > .fonticon {  
+    -fx-text-fill: derive(-fi-icon-color, -20%);       
 }
 
-.button:hover > .fa-plain > .fonticon {
-    -fx-text-fill: derive(-fa-icon-color, 0%);       
+.button:hover > .fi-plain > .fonticon {
+    -fx-text-fill: derive(-fi-icon-color, 0%);       
 }
 
-.fa-stack-base > .fonticon {
-    -fx-text-fill: linear-gradient(derive(-fa-icon-color, 70%) 0%, derive(-fa-icon-color, 30%) 70%, derive(-fa-icon-color, 10%) 85%);
+.fi-stack-base > .fonticon {
+    -fx-text-fill: linear-gradient(derive(-fi-icon-color, 70%) 0%, derive(-fi-icon-color, 30%) 70%, derive(-fi-icon-color, 10%) 85%);
 }
 
-.fa-dropshadow > .fonticon {
+.fi-dropshadow > .fonticon {
     -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.5) , 8 , 0.0 , 0 , 0 );
 }
