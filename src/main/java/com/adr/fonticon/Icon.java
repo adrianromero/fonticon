@@ -1,7 +1,7 @@
-//    FontAwesomeIcon is a JavaFX library to use Fontawesome
+//    FontIcon is a JavaFX library to use FontIcons
 //    Copyright (C) 2014 Adrián Romero Corchado.
 //
-//    This file is part of FontAwesomeIcon
+//    This file is part of FontIcon
 //
 //     Licensed under the Apache License, Version 2.0 (the "License");
 //     you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
 //     See the License for the specific language governing permissions and
 //     limitations under the License.
 
-package com.adr.awesomeicon;
+package com.adr.fonticon;
 
-import com.adr.awesomeicon.transitions.IconTransition;
+import com.adr.fonticon.transitions.IconTransition;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;

@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath com.adr.awesomeicon.Demo</exec.args>
+                <exec.args>-classpath %classpath com.adr.fonticon.Demo</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>

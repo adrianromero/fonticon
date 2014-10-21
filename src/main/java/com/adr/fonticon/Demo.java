@@ -1,4 +1,4 @@
-//    FontAwesome is a JavaFX library to use Fontawesome
+//    FontIcon is a JavaFX library to use FontIcons
 //    Copyright (C) 2014 Adrián Romero Corchado.
 //
 //    This file is part of FontAwesome
@@ -15,11 +15,8 @@
 //     See the License for the specific language governing permissions and
 //     limitations under the License.
 
-package com.adr.awesomeicon;
+package com.adr.fonticon;
 
-import javafx.animation.Animation;
-import javafx.animation.Interpolator;
-import javafx.animation.RotateTransition;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,7 +24,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 /**
  *
@@ -54,7 +50,8 @@ public class Demo extends Application {
                 
                 new Button("Ion Icon Alert", new Icon(IonIcons.ION_ALERT, 48.0, "fa-iconwhite", "fa-shadow")),
                 new Button("Open Iconic Account Login", new Icon(OpenIconic.ACCOUNT_LOGIN, 48.0, "fa-iconwhite", "fa-shadow")),
-                new Button("Octicon Alert", new Icon(Octicons.OCTICON_ALERT, 48.0, "fa-iconwhite", "fa-shadow"))
+                new Button("Octicon Alert", new Icon(Octicons.OCTICON_ALERT, 48.0, "fa-iconwhite", "fa-shadow")),
+                new Button("Weather", new Icon(WeatherIcons.WI_CLOUDY, 48.0, "fa-iconwhite", "fa-shadow"))
                 );
 
         Scene scene = new Scene(pane);        

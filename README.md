@@ -1,4 +1,4 @@
-awesomeicon
+FontIcon
 ===========
 
-AwesomeIcon is a JavaFX library to use Fontawesome
+FontIcon is a JavaFX library to use Font Icons.

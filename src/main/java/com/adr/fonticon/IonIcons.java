@@ -1,7 +1,7 @@
-//    FontAwesome is a JavaFX library to use Fontawesome
+//    FontIcon is a JavaFX library to use FontIcons
 //    Copyright (C) 2014 Adrián Romero Corchado.
 //
-//    This file is part of FontAwesome
+//    This file is part of FontIconomeIcon
 //
 //     Licensed under the Apache License, Version 2.0 (the "License");
 //     you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //     See the License for the specific language governing permissions and
 //     limitations under the License.
 
-package com.adr.awesomeicon;
+package com.adr.fonticon;
 
 import javafx.scene.text.Font;
 
@@ -643,7 +643,7 @@ public enum IonIcons implements IconFont {
     
     static {
         try {
-            IONICONS = Font.loadFont(FontAwesome.class.getResourceAsStream("fonts/ioniocons.ttf"), 10.0).getName();    
+            IONICONS = Font.loadFont(IonIcons.class.getResourceAsStream("fonts/ioniocons.ttf"), 10.0).getName();    
         } catch (Exception e) {
         }
     } 
