@@ -17,6 +17,7 @@
 
 package com.adr.fonticon;
 
+import com.adr.fonticon.transitions.IconRotate;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -45,6 +46,7 @@ public class Demo extends Application {
         FlowPane pane = new FlowPane();
                
         pane.getChildren().addAll(
+                new Icon(IonIcons.ION_LOADING_A, 48.0, new IconRotate(), "colorred"),
                 new Icon(FontAwesome.FA_ANDROID, 48.0, "fi-iconred", "fi-shadow"),
                 new Icon(FontAwesome.FA_BANK, 48.0, "fi-iconblue", "fi-shadow"),
                 new Icon(FontAwesome.FA_FILTER, 48.0, "fi-icongreen", "fi-shadow"),
