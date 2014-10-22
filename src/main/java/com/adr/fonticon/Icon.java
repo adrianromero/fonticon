@@ -28,6 +28,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -35,7 +36,7 @@ import javafx.scene.text.Font;
  */
 public class Icon extends Region {
 
-    private final Label label;
+    private final Text label;
     
     public static Node createIcon(IconFont iconchar, double iconsize, IconTransition tr, String... iconstyles) {
         Label label = new Label();
@@ -52,13 +53,21 @@ public class Icon extends Region {
     public static Node createIcon(IconFont iconchar, double iconsize, String... iconstyles) {
         return createIcon(iconchar, iconsize, null, iconstyles);
     }
+
+    public Icon() {
+        this(null, 14.0, null, new String[0]);
+    }
     
     public Icon(IconFont iconchar, double iconsize, String... iconstyles) {
+        this(iconchar, iconsize, null, iconstyles);
+    }
+    
+    public Icon(IconFont iconchar, double iconsize, IconTransition tr, String... iconstyles) {
 
         size = new SimpleDoubleProperty(this, "Size", iconsize);
         icon = new SimpleObjectProperty<IconFont>(this, "Icon", iconchar);
         
-        label = new Label(); 
+        label = new Text(); 
         label.getStyleClass().add("fonticon");
         label.textProperty().bind(Bindings.createStringBinding(() -> {
             IconFont c = fontIconProperty().get();
@@ -71,16 +80,18 @@ public class Icon extends Region {
         getChildren().add(label);    
         getStyleClass().addAll(iconstyles);
         
-        label.prefWidthProperty().bind(prefWidthProperty());
-        label.prefHeightProperty().bind(prefHeightProperty());
-        label.maxWidthProperty().bind(maxWidthProperty());
-        label.maxHeightProperty().bind(maxHeightProperty());
-        label.minWidthProperty().bind(minWidthProperty());
-        label.minHeightProperty().bind(minHeightProperty());
-    }
-
-    public Icon() {
-        this(null, 14.0);
+        label.relocate(0, 0);
+        
+//        label.prefWidthProperty().bind(prefWidthProperty());
+//        label.prefHeightProperty().bind(prefHeightProperty());
+//        label.maxWidthProperty().bind(maxWidthProperty());
+//        label.maxHeightProperty().bind(maxHeightProperty());
+//        label.minWidthProperty().bind(minWidthProperty());
+//        label.minHeightProperty().bind(minHeightProperty());
+        
+        if (tr != null) {
+            tr.applyTransition(label);
+        }        
     }
     
     private DoubleProperty size;    
