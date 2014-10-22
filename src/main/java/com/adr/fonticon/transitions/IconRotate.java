@@ -20,6 +20,7 @@ package com.adr.fonticon.transitions;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
+import javafx.scene.CacheHint;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
@@ -31,8 +32,10 @@ public class IconRotate extends IconTransition {
 
     @Override
     public void applyTransition(Node node) {
+        node.setCacheHint(CacheHint.ROTATE);
         RotateTransition rt = new RotateTransition(Duration.millis(1000), node);
-        rt.setByAngle(360);
+        rt.setFromAngle(0);
+        rt.setToAngle(360);
         rt.setCycleCount(Animation.INDEFINITE);
         rt.setInterpolator(Interpolator.LINEAR);
         rt.play();
