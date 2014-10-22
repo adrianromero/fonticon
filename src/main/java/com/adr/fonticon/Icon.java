@@ -23,9 +23,8 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.geometry.Bounds;
 import javafx.geometry.Orientation;
-import javafx.scene.Node;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -36,61 +35,40 @@ import javafx.scene.text.Text;
  */
 public class Icon extends Region {
 
-    private final Text label;
+    private final Text txt;
     
-    public static Node createIcon(IconFont iconchar, double iconsize, IconTransition tr, String... iconstyles) {
-        Label label = new Label();
-        label.getStyleClass().add("fonticon");
-        label.getStyleClass().addAll(iconstyles);
-        label.setFont(Font.font(iconchar.getFontName(), iconsize));
-        label.setText(iconchar.getString());
-        if (tr != null) {
-            tr.applyTransition(label);
-        }
-        return label;
-    }
-    
-    public static Node createIcon(IconFont iconchar, double iconsize, String... iconstyles) {
-        return createIcon(iconchar, iconsize, null, iconstyles);
-    }
-
     public Icon() {
         this(null, 14.0, null, new String[0]);
     }
     
-    public Icon(IconFont iconchar, double iconsize, String... iconstyles) {
-        this(iconchar, iconsize, null, iconstyles);
+    public Icon(IconFont icon, double size, String... styles) {
+        this(icon, size, null, styles);
     }
     
-    public Icon(IconFont iconchar, double iconsize, IconTransition tr, String... iconstyles) {
+    public Icon(IconFont icon, double size, IconTransition tr, String... styles) {
 
-        size = new SimpleDoubleProperty(this, "Size", iconsize);
-        icon = new SimpleObjectProperty<IconFont>(this, "Icon", iconchar);
+        this.size = new SimpleDoubleProperty(this, "Size", size);
+        this.icon = new SimpleObjectProperty<IconFont>(this, "Icon", icon);
         
-        label = new Text(); 
-        label.getStyleClass().add("fonticon");
-        label.textProperty().bind(Bindings.createStringBinding(() -> {
+        txt = new Text(); 
+        txt.getStyleClass().add("fonticon");
+        txt.textProperty().bind(Bindings.createStringBinding(() -> {
             IconFont c = fontIconProperty().get();
             return c == null ? "" : c.getString();
         }, fontIconProperty()));
-        label.fontProperty().bind(Bindings.createObjectBinding(() -> {
+        txt.fontProperty().bind(Bindings.createObjectBinding(() -> {
             IconFont c = fontIconProperty().get();
-            return c == null ? Font.getDefault() : Font.font(iconchar.getFontName(), sizeProperty().getValue());
+            return c == null ? Font.getDefault() : Font.font(icon.getFontName(), sizeProperty().getValue());
         } , sizeProperty(), fontIconProperty()));
-        getChildren().add(label);    
-        getStyleClass().addAll(iconstyles);
+        getChildren().add(txt);    
+        getStyleClass().addAll(styles);
         
-        label.relocate(0, 0);
-        
-//        label.prefWidthProperty().bind(prefWidthProperty());
-//        label.prefHeightProperty().bind(prefHeightProperty());
-//        label.maxWidthProperty().bind(maxWidthProperty());
-//        label.maxHeightProperty().bind(maxHeightProperty());
-//        label.minWidthProperty().bind(minWidthProperty());
-//        label.minHeightProperty().bind(minHeightProperty());
+        widthProperty().addListener(observer -> resize());
+        heightProperty().addListener(observer -> resize());       
+        resize();
         
         if (tr != null) {
-            tr.applyTransition(label);
+            tr.applyTransition(txt);
         }        
     }
     
@@ -106,36 +84,41 @@ public class Icon extends Region {
     
     @Override 
     public final Orientation getContentBias() {
-        return label.getContentBias();
+        return txt.getContentBias();
     }    
     
     @Override 
     protected final double computeMaxWidth(double height) {
-        return label.maxWidth(height);
+        return txt.maxWidth(height);
     }
 
     @Override 
     protected final double computeMaxHeight(double width) {
-        return label.maxHeight(width);
+        return txt.maxHeight(width);
     }
     
     @Override 
     protected final double computeMinWidth(double height) {
-        return label.minWidth(height);
+        return txt.minWidth(height);
     }
 
     @Override 
     protected final double computeMinHeight(double width) {
-        return label.minHeight(width);
+        return txt.minHeight(width);
     }
     
     @Override 
     protected final double computePrefWidth(double height) {
-        return label.prefWidth(height);
+        return txt.prefWidth(height);
     }
 
     @Override
     protected final double computePrefHeight(double width) {
-        return label.prefHeight(width);
+        return txt.prefHeight(width);
     }
+    
+    private void resize() {
+        Bounds b = txt.getLayoutBounds();
+        txt.relocate((getWidth() - b.getWidth()) * 0.5, (getHeight() - b.getHeight()) * 0.5);         
+    }    
 }

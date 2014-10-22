@@ -39,7 +39,7 @@
 
 .fi-shadow > .fonticon {  
     -fx-effect: innershadow(three-pass-box , derive(-fi-icon-color,-70%) , 0.1em, 0.0 , 0.07em, 0.07em );
-    -fx-text-fill: linear-gradient(to bottom, derive(-fi-icon-color,20%) 10%, derive(-fi-icon-color,-40%) 80%);       
+    -fx-fill: linear-gradient(to bottom, derive(-fi-icon-color,20%) 10%, derive(-fi-icon-color,-40%) 80%);       
 }
 
 .button:hover > .fi-shadow > .fonticon {
@@ -47,15 +47,15 @@
 }
 
 .fi-plain > .fonticon {  
-    -fx-text-fill: derive(-fi-icon-color, -20%);       
+    -fx-fill: derive(-fi-icon-color, -20%);       
 }
 
 .button:hover > .fi-plain > .fonticon {
-    -fx-text-fill: derive(-fi-icon-color, 0%);       
+    -fx-fill: derive(-fi-icon-color, 0%);       
 }
 
 .fi-stack-base > .fonticon {
-    -fx-text-fill: linear-gradient(derive(-fi-icon-color, 70%) 0%, derive(-fi-icon-color, 30%) 70%, derive(-fi-icon-color, 10%) 85%);
+    -fx-fill: linear-gradient(derive(-fi-icon-color, 70%) 0%, derive(-fi-icon-color, 30%) 70%, derive(-fi-icon-color, 10%) 85%);
 }
 
 .fi-dropshadow > .fonticon {
