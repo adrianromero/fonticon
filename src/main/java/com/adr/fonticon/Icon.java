@@ -32,8 +32,9 @@ import javafx.scene.text.Text;
 /**
  *
  * @author adrian
+ * @param <T>
  */
-public class Icon extends Region {
+public class Icon<T extends IconFont> extends Region {
 
     private final Text txt;
     
@@ -41,25 +42,25 @@ public class Icon extends Region {
         this(null, 14.0, null, new String[0]);
     }
     
-    public Icon(IconFont icon, double size, String... styles) {
+    public Icon(T icon, double size, String... styles) {
         this(icon, size, null, styles);
     }
     
-    public Icon(IconFont icon, double size, IconTransition tr, String... styles) {
+    public Icon(T icon, double size, IconTransition tr, String... styles) {
 
         this.size = new SimpleDoubleProperty(this, "Size", size);
-        this.icon = new SimpleObjectProperty<IconFont>(this, "Icon", icon);
+        this.icon = new SimpleObjectProperty<T>(this, "Icon", icon);
         
         txt = new Text(); 
         txt.getStyleClass().add("fonticon");
         txt.textProperty().bind(Bindings.createStringBinding(() -> {
-            IconFont c = fontIconProperty().get();
+            IconFont c = iconFontProperty().get();
             return c == null ? "" : c.getString();
-        }, fontIconProperty()));
+        }, iconFontProperty()));
         txt.fontProperty().bind(Bindings.createObjectBinding(() -> {
-            IconFont c = fontIconProperty().get();
+            IconFont c = iconFontProperty().get();
             return c == null ? Font.getDefault() : Font.font(icon.getFontName(), sizeProperty().getValue());
-        } , sizeProperty(), fontIconProperty()));
+        } , sizeProperty(), iconFontProperty()));
         getChildren().add(txt);    
         getStyleClass().addAll(styles);
         
@@ -77,10 +78,10 @@ public class Icon extends Region {
     public final void setSize(double value) { sizeProperty().setValue(value); }
     public final double getSize() { return size.getValue(); }        
     
-    private ObjectProperty<IconFont> icon;
-    public final ObjectProperty<IconFont> fontIconProperty() { return icon; }
-    public final void setFontIcon(IconFont value) { fontIconProperty().setValue(value); }
-    public final IconFont getFontIcon() { return icon.getValue(); } 
+    private ObjectProperty<T> icon;
+    public final ObjectProperty<T> iconFontProperty() { return icon; }
+    public final void setIconFont(T value) { iconFontProperty().setValue(value); }
+    public final T getIconFont() { return icon.getValue(); } 
     
     @Override 
     public final Orientation getContentBias() {

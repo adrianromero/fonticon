@@ -17,24 +17,41 @@
      limitations under the License
 */
 
-.fi-iconblue {
-    -fi-icon-color: rgb(120, 180, 255);  
-}
 
-.fi-iconwhite {
-    -fi-icon-color: rgb(255, 255, 255);    
+.fi-iconmediumblue {
+    -fi-icon-color: rgb(120, 180, 255);  
 }
 
 .fi-icondarkblue {
     -fi-icon-color: rgb(0, 0, 150);    
 }
 
-.fi-icongreen {
-    -fi-icon-color: rgb(0, 255, 0);    
+.fi-iconblack {
+    -fi-icon-color: rgb(0, 0, 0);  
 }
 
 .fi-iconred {    
     -fi-icon-color: rgb(255, 0, 0);
+}
+
+.fi-icongreen {
+    -fi-icon-color: rgb(0, 255, 0);    
+}
+
+.fi-iconblue {
+    -fi-icon-color: rgb(0, 0, 255);    
+}
+
+.fi-iconyellow {    
+    -fi-icon-color: rgb(255, 255, 0);
+}
+
+.fi-iconcyan {    
+    -fi-icon-color: rgb(0, 255, 255);
+}
+
+.fi-iconwhite {
+    -fi-icon-color: rgb(255, 255, 255);    
 }
 
 .fi-shadow > .fonticon {  
