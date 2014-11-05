@@ -1,7 +1,7 @@
 //    FontIcon is a JavaFX library to use FontIcons
 //    Copyright (C) 2014 Adrián Romero Corchado.
 //
-//    This file is part of FontIconomeIcon
+//    This file is part of FontIcon
 //
 //     Licensed under the Apache License, Version 2.0 (the "License");
 //     you may not use this file except in compliance with the License.
