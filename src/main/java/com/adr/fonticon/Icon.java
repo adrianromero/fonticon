@@ -42,6 +42,10 @@ public class Icon<T extends IconFont> extends Region {
         this(null, 14.0, null, new String[0]);
     }
     
+    public Icon(T icon) {
+        this(icon, 14.0, null, new String[0]);
+    }
+    
     public Icon(T icon, double size, String... styles) {
         this(icon, size, null, styles);
     }
