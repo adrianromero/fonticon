@@ -81,6 +81,8 @@ public class Demo extends Application {
         addFontIcon(tabpane, Octicons.class.getSimpleName(), Octicons.values());
         addFontIcon(tabpane, OpenIconic.class.getSimpleName(), OpenIconic.values());
         addFontIcon(tabpane, WeatherIcons.class.getSimpleName(), WeatherIcons.values());
+        addFontIcon(tabpane, Material.class.getSimpleName(), Material.values());
+        addFontIcon(tabpane, Holo.class.getSimpleName(), Holo.values());
 
         Scene scene = new Scene(tabpane);        
         scene.getStylesheets().add(StylesGallery.BASE.getPath());
