@@ -29,26 +29,25 @@ import javafx.scene.text.Text;
 /**
  *
  * @author adrian
- * @param <T>
  */
-public class Icon<T extends IconFont> extends Text {
+public class Icon extends Text {
     
     public Icon() {
         this(null, 14.0, null, new String[0]);
     }
     
-    public Icon(T icon) {
+    public Icon(IconFont icon) {
         this(icon, 14.0, null, new String[0]);
     }
     
-    public Icon(T icon, double size, String... styles) {
+    public Icon(IconFont icon, double size, String... styles) {
         this(icon, size, null, styles);
     }
     
-    public Icon(T icon, double size, IconTransition tr, String... styles) {
+    public Icon(IconFont icon, double size, IconTransition tr, String... styles) {
 
         this.size = new SimpleDoubleProperty(this, "Size", size);
-        this.icon = new SimpleObjectProperty<T>(this, "Icon", icon);
+        this.icon = new SimpleObjectProperty<IconFont>(this, "Icon", icon);
         
         getStyleClass().add("fonticon");
         textProperty().bind(Bindings.createStringBinding(() -> {
@@ -71,8 +70,8 @@ public class Icon<T extends IconFont> extends Text {
     public final void setSize(double value) { sizeProperty().setValue(value); }
     public final double getSize() { return size.getValue(); }        
     
-    private ObjectProperty<T> icon;
-    public final ObjectProperty<T> iconFontProperty() { return icon; }
-    public final void setIconFont(T value) { iconFontProperty().setValue(value); }
-    public final T getIconFont() { return icon.getValue(); }    
+    private ObjectProperty<IconFont> icon;
+    public final ObjectProperty<IconFont> iconFontProperty() { return icon; }
+    public final void setIconFont(IconFont value) { iconFontProperty().setValue(value); }
+    public final IconFont getIconFont() { return icon.getValue(); }    
 }
