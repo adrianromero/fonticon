@@ -24,6 +24,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
@@ -50,22 +51,22 @@ public class Demo extends Application {
         flow.setPrefSize(650.0, 500.0);
         
         flow.getChildren().addAll(
-                createButton(IonIcons.ION_LOADING_A, new IconRotate()),
-                createButton(FontAwesome.FA_ANDROID, null, "fi-iconred", "fi-plain"),
-                createButton(FontAwesome.FA_BANK, null, "fi-iconmediumblue", "fi-shadow"),
-                createButton(FontAwesome.FA_APPLE, null, "fi-iconwhite", "fi-shadow"),
-                createButton(FontAwesome.FA_BELL, null, "fi-iconwhite", "fi-plain", "fi-dropshadow"),
-                createButton(FontAwesome.FA_FILTER, null, "fi-icongreen", "fi-shadow"),                
-                createButton(FontAwesome.FA_BOMB, null, "fi-iconred", "fi-shadow"),
-                createButton(IonIcons.ION_ALERT, null, "fi-iconblue", "fi-shadow"),
-                createButton(OpenIconic.ACCOUNT_LOGIN, null, "fi-iconyellow", "fi-shadow"),
-                createButton(Octicons.OCTICON_ALERT, null, "fi-iconcyan", "fi-shadow"),
-                createButton(WeatherIcons.WI_CLOUDY, null, "fi-iconwhite", "fi-shadow"),                
+                createButton(IconBuilder.create(IonIcons.ION_LOADING_A, 48.0).iconTransition(new IconRotate()).build()),
+                createButton(IconBuilder.create(FontAwesome.FA_ANDROID, 48.0).classes("fi-iconred", "fi-plain").build()),
+                createButton(IconBuilder.create(FontAwesome.FA_BANK, 48.0).classes("fi-shadow", "fi-iconmediumblue").build()),
+                createButton(IconBuilder.create(FontAwesome.FA_APPLE, 48.0).classes("fi-iconwhite", "fi-shadow").build()),
+                createButton(IconBuilder.create(FontAwesome.FA_BELL, 48.0).classes("fi-iconwhite", "fi-plain", "fi-dropshadow").build()),
+                createButton(IconBuilder.create(FontAwesome.FA_FILTER, 48.0).classes("fi-icongreen", "fi-shadow").build()),                
+                createButton(IconBuilder.create(FontAwesome.FA_BOMB, 48.0).classes("fi-iconred", "fi-shadow").build()),
+                createButton(IconBuilder.create(IonIcons.ION_ALERT, 48.0).classes("fi-iconblue", "fi-shadow").build()),
+                createButton(IconBuilder.create(OpenIconic.ACCOUNT_LOGIN, 48.0).classes("fi-iconyellow", "fi-shadow").build()),
+                createButton(IconBuilder.create(Octicons.OCTICON_ALERT, 48.0).classes("fi-iconcyan", "fi-shadow").build()),
+                createButton(IconBuilder.create(WeatherIcons.WI_CLOUDY, 48.0).classes("fi-iconwhite", "fi-shadow").build()),                
                 createButton("Stacked test 1", new StackPane(
-                        new Icon(FontAwesome.FA_SQUARE, 48.0, "fi-icondarkblue", "fi-stack-base"),
-                        new Icon(FontAwesome.FA_REFRESH, 32.0, "fi-iconwhite", "fi-plain"))),
+                        IconBuilder.create(FontAwesome.FA_SQUARE, 48.0).classes("fi-icondarkblue", "fi-stack-base").build(),
+                        IconBuilder.create(FontAwesome.FA_REFRESH, 32.0).classes("fi-iconwhite", "fi-plain").build())),
                 createButton("Stacked test 2", new StackPane(                        
-                        new Icon(FontAwesome.FA_CALENDAR_O, 48.0, "fi-iconblack", "fi-plain"),
+                        IconBuilder.create(FontAwesome.FA_CIRCLE_THIN, 48.0).classes("fi-iconblack", "fi-plain").build(),
                         new Label("31")))
                 );
         
@@ -100,7 +101,7 @@ public class Demo extends Application {
         flow.setPrefSize(650.0, 500.0);
         
         for (IconFont icon : icons) {
-            flow.getChildren().add(createButton(icon, null));
+            flow.getChildren().add(createButton(IconBuilder.create(icon, 48.0).build()));
         }    
         
         ScrollPane p = new ScrollPane();
@@ -110,16 +111,17 @@ public class Demo extends Application {
         t.setContent(p);
         tabpane.getTabs().add(t);        
     }
-
-    private Button createButton(IconFont icon, IconTransition tr, String... styles) {
-        return createButton(icon.toString(), new Icon(icon, 48.0, tr, styles));
+    
+    private Button createButton(Node graph) {
+        return createButton((String) graph.getProperties().get("ICONLABEL"), graph);
     }
     
     private Button createButton(String text, Node graph) {
         Button b = new Button(text, graph);
-        b.setPrefSize(200.0, 50.0);
-        b.setPrefSize(200.0, 50.0);
-        b.setPrefSize(200.0, 50.0);
+        b.setMinSize(200.0, 120.0);
+        b.setMaxSize(200.0, 120.0);
+        b.setPrefSize(200.0, 120.0);
+        b.setContentDisplay(ContentDisplay.TOP);
         return b;
     }
     
