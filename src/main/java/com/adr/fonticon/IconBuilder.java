@@ -40,6 +40,10 @@ public class IconBuilder {
         return builder;        
     }   
     
+    public static IconBuilder create(IconFont icon) {
+        return create(icon, 14.0);
+    }
+    
     public Node build() {
         return this.icon;
     }  
