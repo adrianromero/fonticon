@@ -18,7 +18,6 @@
 package com.adr.fonticon;
 
 import com.adr.fonticon.transitions.IconRotate;
-import com.adr.fonticon.transitions.IconTransition;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
