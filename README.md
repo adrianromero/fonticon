@@ -32,6 +32,7 @@ Screenshots
 ===========
 
 ![Demo examples](https://raw.github.com/adrianromero/fonticon/master/screenshot-demo.png)
+
 Demo examples
 
 Acknowledgments
@@ -68,13 +69,13 @@ All fonts are under the [SIL Licensed](http://scripts.sil.org/cms/scripts/page.p
 Weather themed icons for Bootstrap
 Maintained at http://erikflowers.github.io/weather-icons
 http://twitter.com/Erik_UX
-- Fpmt licensed under SIL OFL 1.1 -
+Fpmt licensed under SIL OFL 1.1 -
 http://scripts.sil.org/OFL
-- CSS and LESS are licensed under MIT License -
+CSS and LESS are licensed under MIT License -
 http://opensource.org/licenses/mit-license.html
-- Documentation licensed under CC BY 3.0 -
+Documentation licensed under CC BY 3.0 -
 http://creativecommons.org/licenses/by/3.0/
-- Inspired by and works great as a companion with Font Awesome
+Inspired by and works great as a companion with Font Awesome
 "Font Awesome by Dave Gandy - http://fontawesome.io"
 Weather Icons Bootstrap Package Author - Erik Flowers - erik@helloerik.com
 Email: erik@helloerik.com
