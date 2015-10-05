@@ -18,7 +18,7 @@
 package com.adr.fonticon;
 
 import com.adr.fonticon.transitions.IconTransition;
-import javafx.scene.Node;
+import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -44,7 +44,7 @@ public class IconBuilder {
         return create(icon, 14.0);
     }
     
-    public Node build() {
+    public Shape build() {
         return this.icon;
     }  
     
