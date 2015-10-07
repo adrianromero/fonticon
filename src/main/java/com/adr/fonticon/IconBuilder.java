@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2014 Adrián Romero Corchado.
+//    Copyright (C) 2014-2015 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
@@ -62,4 +62,9 @@ public class IconBuilder {
         tr.applyTransition(icon);
         return this;
     }  
+    
+    public IconBuilder apply(IconDecorator visitor) {
+        visitor.decorate(icon);
+        return this;
+    }
 }
