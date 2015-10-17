@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2014 Adrián Romero Corchado.
+//    Copyright (C) 2015 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
@@ -15,15 +15,34 @@
 //     See the License for the specific language governing permissions and
 //     limitations under the License
 
-package com.adr.fonticon.transitions;
+package com.adr.fonticon.decorator;
 
-import javafx.scene.Node;
+import com.adr.fonticon.IconDecorator;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Shape;
 
 /**
  *
  * @author adrian
  */
-public abstract class IconTransition {
+public class Shine implements IconDecorator {
     
-    public abstract void applyTransition(Node node);
+    private final Color fill;
+    
+    public Shine(Color fill) {
+        this.fill = fill;
+    }
+    
+    @Override
+    public void decorate(Shape s) {
+        s.setFill(fill);
+        s.setStrokeWidth(1.0);
+        s.setStroke(Color.GRAY);
+        
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setRadius(3.0);
+        dropShadow.setSpread(0.26);
+        dropShadow.setColor(fill);
+        s.setEffect(dropShadow);        }
 }

@@ -17,7 +17,6 @@
 
 package com.adr.fonticon;
 
-import com.adr.fonticon.transitions.IconTransition;
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -57,11 +56,6 @@ public class IconBuilder {
         icon.setStyle(style);
         return this;
     }
-    
-    public IconBuilder iconTransition(IconTransition tr) {
-        tr.applyTransition(icon);
-        return this;
-    }  
     
     public IconBuilder apply(IconDecorator visitor) {
         visitor.decorate(icon);

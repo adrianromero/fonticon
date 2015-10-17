@@ -17,7 +17,9 @@
 
 package com.adr.fonticon;
 
-import com.adr.fonticon.transitions.IconRotate;
+import com.adr.fonticon.decorator.FillPaint;
+import com.adr.fonticon.decorator.Rotate;
+import com.adr.fonticon.decorator.Shine;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -30,6 +32,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -50,8 +53,8 @@ public class Demo extends Application {
         flow.setPrefSize(650.0, 500.0);
         
         flow.getChildren().addAll(
-                createButton(IconBuilder.create(IonIcons.ION_LOADING_A, 48.0).iconTransition(new IconRotate()).build()),
-                createButton(IconBuilder.create(FontAwesome.FA_ANDROID, 48.0).classes("fi-iconred", "fi-plain").build()),
+                createButton(IconBuilder.create(IonIcons.ION_LOADING_A, 48.0).apply(new Rotate()).build()),
+                createButton(IconBuilder.create(FontAwesome.FA_ANDROID, 48.0).apply(new FillPaint(Color.RED.darker())).build()),
                 createButton(IconBuilder.create(FontAwesome.FA_BANK, 48.0).classes("fi-shadow", "fi-iconmediumblue").build()),
                 createButton(IconBuilder.create(FontAwesome.FA_APPLE, 48.0).classes("fi-iconwhite", "fi-shadow").build()),
                 createButton(IconBuilder.create(FontAwesome.FA_BELL, 48.0).classes("fi-iconwhite", "fi-plain", "fi-dropshadow").build()),
@@ -65,7 +68,7 @@ public class Demo extends Application {
                         IconBuilder.create(FontAwesome.FA_SQUARE, 48.0).classes("fi-icondarkblue", "fi-stack-base").build(),
                         IconBuilder.create(FontAwesome.FA_REFRESH, 32.0).classes("fi-iconwhite", "fi-plain").build())),
                 createButton("Stacked test 2", new StackPane(                        
-                        IconBuilder.create(FontAwesome.FA_CIRCLE_THIN, 48.0).classes("fi-iconblack", "fi-plain").build(),
+                        IconBuilder.create(FontAwesome.FA_CIRCLE_THIN, 48.0).apply(new Shine(Color.LIME)).build(),
                         new Label("31")))
                 );
         
