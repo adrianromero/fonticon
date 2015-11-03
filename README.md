@@ -65,21 +65,22 @@ Code License: MIT (http://choosealicense.com/licenses/mit/)
 * [Open Iconic v1.1.1](http://useiconic.com/open)
 All code (including SVG markup) is under the [MIT License](http://opensource.org/licenses/MIT).
 All fonts are under the [SIL Licensed](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web).
-*  Weather Icons 1.2
+*  Weather Icons 2.0.8
+Updated September 19, 2015
 Weather themed icons for Bootstrap
+Author - Erik Flowers - erik@helloerik.com
+Email: erik@helloerik.com
+Twitter: http://twitter.com/Erik_UX
 Maintained at http://erikflowers.github.io/weather-icons
-http://twitter.com/Erik_UX
-Fpmt licensed under SIL OFL 1.1 -
+License
+Font licensed under SIL OFL 1.1 -
 http://scripts.sil.org/OFL
-CSS and LESS are licensed under MIT License -
+CSS, SCSS and LESS are licensed under MIT License -
 http://opensource.org/licenses/mit-license.html
 Documentation licensed under CC BY 3.0 -
 http://creativecommons.org/licenses/by/3.0/
 Inspired by and works great as a companion with Font Awesome
 "Font Awesome by Dave Gandy - http://fontawesome.io"
-Weather Icons Bootstrap Package Author - Erik Flowers - erik@helloerik.com
-Email: erik@helloerik.com
-Twitter: http://twitter.com/Erik_UX
 
 License
 =======
