@@ -38,7 +38,7 @@ Demo examples
 Acknowledgments
 ===============
 
-* Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+* Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Android Action Bar Icon Pack that is provided as part of Android Design Guidelines.
 http://wireframesketcher.com/mockups/android-action-bar-icons.htm
