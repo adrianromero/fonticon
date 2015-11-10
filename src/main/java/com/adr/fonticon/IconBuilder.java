@@ -85,16 +85,6 @@ public class IconBuilder implements Builder<Icon> {
         return apply(new Shine(color));
     }
     
-    public IconBuilder style(String style) {
-        icon.setStyle(style);
-        return this;
-    }
-    
-    public IconBuilder classes(String... classes) {
-        icon.getStyleClass().addAll(classes);
-        return this;
-    }
-    
     public IconBuilder apply(IconDecorator visitor) {
         visitor.decorate(icon);
         return this;

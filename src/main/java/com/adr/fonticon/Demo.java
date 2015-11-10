@@ -19,6 +19,8 @@ package com.adr.fonticon;
 
 import com.adr.fonticon.decorator.FillPaint;
 import com.adr.fonticon.decorator.Rotate;
+import com.adr.fonticon.decorator.ShadowHigh;
+import com.adr.fonticon.decorator.ShadowHole;
 import com.adr.fonticon.decorator.Shine;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -55,18 +57,18 @@ public class Demo extends Application {
         flow.getChildren().addAll(
                 createButton(IconBuilder.create(IonIcons.ION_LOADING_A, 48.0).apply(new Rotate()).build()),
                 createButton(IconBuilder.create(FontAwesome.FA_ANDROID, 48.0).apply(new FillPaint(Color.RED.darker())).build()),
-                createButton(IconBuilder.create(FontAwesome.FA_BANK, 48.0).classes("fi-shadow", "fi-iconmediumblue").build()),
-                createButton(IconBuilder.create(FontAwesome.FA_APPLE, 48.0).classes("fi-iconwhite", "fi-shadow").build()),
-                createButton(IconBuilder.create(FontAwesome.FA_BELL, 48.0).classes("fi-iconwhite", "fi-plain", "fi-dropshadow").build()),
-                createButton(IconBuilder.create(FontAwesome.FA_FILTER, 48.0).classes("fi-icongreen", "fi-shadow").build()),                
-                createButton(IconBuilder.create(FontAwesome.FA_BOMB, 48.0).classes("fi-iconred", "fi-shadow").build()),
-                createButton(IconBuilder.create(IonIcons.ION_ALERT, 48.0).classes("fi-iconblue", "fi-shadow").build()),
-                createButton(IconBuilder.create(OpenIconic.ACCOUNT_LOGIN, 48.0).classes("fi-iconyellow", "fi-shadow").build()),
-                createButton(IconBuilder.create(Octicons.OCTICON_ALERT, 48.0).classes("fi-iconcyan", "fi-shadow").build()),
-                createButton(IconBuilder.create(WeatherIcons.WI_CLOUDY, 48.0).classes("fi-iconwhite", "fi-shadow").build()),                
-                createButton("Stacked test 1", new StackPane(
-                        IconBuilder.create(FontAwesome.FA_SQUARE, 48.0).classes("fi-icondarkblue", "fi-stack-base").build(),
-                        IconBuilder.create(FontAwesome.FA_REFRESH, 32.0).classes("fi-iconwhite", "fi-plain").build())),
+                createButton(IconBuilder.create(FontAwesome.FA_BANK, 48.0).apply(new ShadowHole(Color.MEDIUMBLUE)).build()),
+                createButton(IconBuilder.create(FontAwesome.FA_APPLE, 48.0).apply(new ShadowHole(Color.WHITE)).build()),
+                createButton(IconBuilder.create(FontAwesome.FA_BELL, 48.0).apply(new ShadowHigh()).color(Color.LIGHTGREY).build()),
+                createButton(IconBuilder.create(FontAwesome.FA_FILTER, 48.0).apply(new ShadowHigh()).color(Color.GREEN).build()),                
+                createButton(IconBuilder.create(FontAwesome.FA_BOMB, 48.0).apply(new ShadowHigh()).color(Color.RED).build()),
+                createButton(IconBuilder.create(IonIcons.ION_ALERT, 48.0).apply(new ShadowHigh()).color(Color.BLUE).build()),
+                createButton(IconBuilder.create(OpenIconic.ACCOUNT_LOGIN, 48.0).apply(new ShadowHole(Color.GRAY)).build()),
+                createButton(IconBuilder.create(Octicons.OCTICON_ALERT, 48.0).apply(new ShadowHole(Color.YELLOW)).build()),
+                createButton(IconBuilder.create(WeatherIcons.WI_CLOUDY, 48.0).apply(new ShadowHole(Color.WHITE)).build()),                
+//                createButton("Stacked test 1", new StackPane(
+//                        IconBuilder.create(FontAwesome.FA_SQUARE, 48.0).classes("fi-icondarkblue", "fi-stack-base").build(),
+//                        IconBuilder.create(FontAwesome.FA_REFRESH, 32.0).classes("fi-iconwhite", "fi-plain").build())),
                 createButton("Stacked test 2", new StackPane(                        
                         IconBuilder.create(FontAwesome.FA_CIRCLE_THIN, 48.0).apply(new Shine(Color.LIME)).build(),
                         new Label("31")))
@@ -88,7 +90,6 @@ public class Demo extends Application {
         addFontIcon(tabpane, Holo.class.getSimpleName(), Holo.values());
 
         Scene scene = new Scene(tabpane);        
-        scene.getStylesheets().add(StylesGallery.BASE.getPath());
         stage.setScene(scene);
         stage.show();
     }
