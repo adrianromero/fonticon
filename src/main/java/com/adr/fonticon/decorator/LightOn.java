@@ -18,41 +18,36 @@
 package com.adr.fonticon.decorator;
 
 import com.adr.fonticon.IconDecorator;
-import javafx.scene.effect.BlurType;
-import javafx.scene.effect.InnerShadow;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.Stop;
 import javafx.scene.shape.Shape;
 
 /**
  *
  * @author adrian
  */
-public class ShadowHole implements IconDecorator {
+public class LightOn implements IconDecorator {
     
     private final Color fill;
     
-    public ShadowHole(Color fill) {
+    public LightOn(Color fill) {
         this.fill = fill;
     }
     
-    @Override
-    public void decorate(Shape s) {  
+    public LightOn() {
+        this(Color.YELLOW);
+    }
     
-        InnerShadow shadow = new InnerShadow();
-        shadow.setColor(fill.deriveColor(1.0, 1.0, 0.7, 1.0));
-        shadow.setBlurType(BlurType.THREE_PASS_BOX);
-        shadow.setRadius(2.0);
-        shadow.setChoke(0.0);
-        shadow.setOffsetX(1.0);
-        shadow.setOffsetY(1.0);
-        s.setEffect(shadow);
-
-        LinearGradient gradient = new LinearGradient(0.0, 0.0, 0.0, 1.0, true, CycleMethod.NO_CYCLE, 
-                new Stop(0.1, fill.deriveColor(1.0, 1.0, 1.2, 1.0)),
-                new Stop(0.9, fill.deriveColor(1.0, 1.0, 0.7, 1.0)));
-        s.setFill(gradient);
+    @Override
+    public void decorate(Shape s) {
+        s.setFill(fill);
+        s.setStrokeWidth(1.0);
+        s.setStroke(Color.GRAY);
+        
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setRadius(10.0);
+        dropShadow.setSpread(0.52);
+        dropShadow.setColor(fill);
+        s.setEffect(dropShadow);
     }
 }
