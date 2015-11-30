@@ -32,6 +32,8 @@ import javafx.scene.text.Font;
  */
 public enum Holo implements IconFont {
 
+    SPACE(' '),
+    
     IC_ABOUT('\uE000'),
     IC_ACCEPT('\uE001'),
     IC_ACCOUNTS('\uE002'),
@@ -177,7 +179,7 @@ public enum Holo implements IconFont {
     IC_WARNING('\uE08E'),
     IC_WEB_SITE('\uE08F');
 
-    private static String HOLOFONT = null;
+    public static String HOLOFONT = null;
     
     static {
         try {

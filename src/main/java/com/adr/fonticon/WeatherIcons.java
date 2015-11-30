@@ -45,6 +45,8 @@ import javafx.scene.text.Font;
  */
 public enum WeatherIcons implements IconFont {
 
+    SPACE(' '),
+
     WI_DAY_SUNNY('\uF00D'),
     WI_DAY_CLOUDY('\uF002'),
     WI_DAY_CLOUDY_GUSTS('\uF000'),
@@ -630,7 +632,7 @@ public enum WeatherIcons implements IconFont {
     WI_WU_TSTORMS('\uF01E'),
     WI_WU_UNKNOWN('\uF00D');
 
-    private static String WEATHERICONS = null;
+    public static String WEATHERICONS = null;
     
     static {
         try {

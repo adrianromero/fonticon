@@ -28,6 +28,8 @@ import javafx.scene.text.Font;
  * @author adrian
  */
 public enum OpenIconic implements IconFont {
+
+    SPACE(' '),
     
     ACCOUNT_LOGIN('\uE000'),
     ACCOUNT_LOGOUT('\uE001'),
@@ -253,7 +255,7 @@ public enum OpenIconic implements IconFont {
     ZOOM_IN('\uE0DD'),
     ZOOM_OUT('\uE0DE');
     
-    private static String OPENICONIC = null;
+    public static String OPENICONIC = null;
     
     static {
         try {

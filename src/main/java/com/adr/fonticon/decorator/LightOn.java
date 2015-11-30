@@ -29,9 +29,15 @@ import javafx.scene.shape.Shape;
 public class LightOn implements IconDecorator {
     
     private final Color fill;
+    private final Color bright;
+    
+    public LightOn(Color fill, Color bright) {
+        this.fill = fill;
+        this.bright = bright;
+    }
     
     public LightOn(Color fill) {
-        this.fill = fill;
+        this(fill, fill);
     }
     
     public LightOn() {
@@ -47,7 +53,7 @@ public class LightOn implements IconDecorator {
         DropShadow dropShadow = new DropShadow();
         dropShadow.setRadius(10.0);
         dropShadow.setSpread(0.52);
-        dropShadow.setColor(fill);
+        dropShadow.setColor(bright);
         s.setEffect(dropShadow);
     }
 }

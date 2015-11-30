@@ -32,6 +32,23 @@ public class IconBuilder implements Builder<Icon> {
     
     private Icon icon;
     
+    public static IconBuilder create(FontAwesome[] iconf, double size) {
+        
+        IconBuilder builder = new IconBuilder();
+        builder.icon = Icon.create();
+        StringBuilder s = new StringBuilder();
+        for (FontAwesome iconf1 : iconf) {
+            s.append(iconf1.getChar());
+        }
+        builder.icon.setText(s.toString());
+        builder.icon.setFont(Font.font(FontAwesome.AWESOMEFONT, size));
+        return builder;    
+    }
+    
+    public static IconBuilder create(FontAwesome[] iconf) {
+        return create(iconf, 14.0);
+    }
+    
     public static IconBuilder create(IconFont iconf, double size) {
         
         IconBuilder builder = new IconBuilder();

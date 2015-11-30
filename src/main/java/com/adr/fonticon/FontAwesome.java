@@ -28,6 +28,8 @@ import javafx.scene.text.Font;
  */
 public enum FontAwesome implements IconFont {
 
+    SPACE(' '),
+    
     FA_GLASS('\uF000'),
     FA_MUSIC('\uF001'),
     FA_SEARCH('\uF002'),
@@ -703,7 +705,7 @@ public enum FontAwesome implements IconFont {
     FA_BLACK_TIE('\uF27E'),
     FA_FONTICONS('\uF280');
     
-    private static String AWESOMEFONT = null;
+    public static String AWESOMEFONT = null;
     
     static {
         try {

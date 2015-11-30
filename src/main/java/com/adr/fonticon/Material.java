@@ -32,6 +32,8 @@ import javafx.scene.text.Font;
  */
 public enum Material implements IconFont {
 
+    SPACE(' '),
+
     IC_ACCESS_ALARMS('\uE000'),
     IC_ACCESS_TIME('\uE001'),
     IC_ACCESSIBILITY('\uE002'),
@@ -466,7 +468,7 @@ public enum Material implements IconFont {
     IC_WIFI_TETHERING('\uE1AF'),
     IC_WORK('\uE1B0');
 
-    private static String MATERIALFONT = null;
+    public static String MATERIALFONT = null;
     
     static {
         try {

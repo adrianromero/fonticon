@@ -32,6 +32,8 @@ import javafx.scene.text.Font;
  * @author adrian
  */
 public enum Octicons implements IconFont {
+
+    SPACE(' '),
     
     OCTICON_ALERT('\uF02D'),
     OCTICON_ALIGNMENT_ALIGN('\uF08A'),
@@ -238,7 +240,7 @@ public enum Octicons implements IconFont {
     OCTICON_X('\uF081'),
     OCTICON_ZAP('\u26A1');
     
-    private static String OCTICONS = null;
+    public static String OCTICONS = null;
     
     static {
         try {

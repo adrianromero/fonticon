@@ -30,6 +30,8 @@ import javafx.scene.text.Font;
  */
 public enum IonIcons implements IconFont {
 
+    SPACE(' '),
+
     ION_ALERT('\uF101'),
     ION_ALERT_CIRCLED('\uF100'),
     ION_ANDROID_ADD('\uF2C7'),
@@ -639,7 +641,7 @@ public enum IonIcons implements IconFont {
     ION_WRENCH('\uF2BA'),
     ION_XBOX('\uF30C');
 
-    private static String IONICONS = null;
+    public static String IONICONS = null;
     
     static {
         try {
