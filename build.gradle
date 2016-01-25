@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'maven'
+
+group = 'com.adr'
+version = '1.0-SNAPSHOT'
+
+mainClassName = 'com.adr.fonticon.Demo'
+
+description = """"""
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
