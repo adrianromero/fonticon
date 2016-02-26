@@ -18,7 +18,6 @@
 package com.adr.fonticon.decorator;
 
 import com.adr.fonticon.IconDecorator;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 
