@@ -27,7 +27,7 @@ import javafx.scene.text.Font;
  * 
  * @author adrian
  */
-public enum OpenIconic implements IconFont {
+public enum OpenIconic implements IconFontExt {
 
     SPACE(' '),
     

@@ -23,10 +23,6 @@ package com.adr.fonticon;
  */
 public interface IconFont {
   
-    public char getChar();
     public String getFontName();
-
-    public default String getString() {
-        return Character.toString(getChar());
-    }    
+    public String getString();
 }

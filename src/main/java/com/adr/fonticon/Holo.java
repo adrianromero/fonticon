@@ -30,7 +30,7 @@ import javafx.scene.text.Font;
  * 
  * @author adrian
  */
-public enum Holo implements IconFont {
+public enum Holo implements IconFontExt {
 
     SPACE(' '),
     

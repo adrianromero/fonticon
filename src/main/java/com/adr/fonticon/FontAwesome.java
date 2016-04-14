@@ -26,7 +26,7 @@ import javafx.scene.text.Font;
  *
  * @author adrian
  */
-public enum FontAwesome implements IconFont {
+public enum FontAwesome implements IconFontExt {
 
     SPACE(' '),
     

@@ -43,7 +43,7 @@ import javafx.scene.text.Font;
  * 
  * @author adrian
  */
-public enum WeatherIcons implements IconFont {
+public enum WeatherIcons implements IconFontExt {
 
     SPACE(' '),
 

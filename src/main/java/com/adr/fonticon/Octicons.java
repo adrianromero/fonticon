@@ -31,7 +31,7 @@ import javafx.scene.text.Font;
  *
  * @author adrian
  */
-public enum Octicons implements IconFont {
+public enum Octicons implements IconFontExt {
 
     SPACE(' '),
     

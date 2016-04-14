@@ -28,7 +28,7 @@ import javafx.scene.text.Font;
  * 
  * @author adrian
  */
-public enum IonIcons implements IconFont {
+public enum IonIcons implements IconFontExt {
 
     SPACE(' '),
 

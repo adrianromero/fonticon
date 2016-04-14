@@ -30,7 +30,7 @@ import javafx.scene.text.Font;
  * 
  * @author adrian
  */
-public enum Material implements IconFont {
+public enum Material implements IconFontExt {
 
     SPACE(' '),
 
