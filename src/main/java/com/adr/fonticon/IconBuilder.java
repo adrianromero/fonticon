@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2014-2015 Adrián Romero Corchado.
+//    Copyright (C) 2014-2016 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
