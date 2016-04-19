@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'maven'
 
 group = 'com.adr'
 version = '1.0-SNAPSHOT'
