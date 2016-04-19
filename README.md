@@ -1,4 +1,4 @@
-FontIcon
+FontIcon [![Release](https://jitpack.io/v/User/Repo.svg)](https://jitpack.io/#User/Repo)
 ========
 
 FontIcon is a JavaFX library to use Font Icons.
