@@ -35,6 +35,21 @@ Screenshots
 
 Demo examples
 
+Install
+=======
+
+To install the library add: 
+ 
+   ```gradle
+   repositories { 
+        jcenter()
+        maven { url "https://jitpack.io" }
+   }
+   dependencies {
+         compile 'com.github.adrianromero:fonticon:1.2.0'
+   }
+   ```  
+
 Acknowledgments
 ===============
 
