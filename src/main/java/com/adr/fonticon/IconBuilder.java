@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2014-2016 Adrián Romero Corchado.
+//    Copyright (C) 2014-2017 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
@@ -66,6 +66,11 @@ public class IconBuilder implements Builder<Icon> {
     
     public IconBuilder iconAwesome(FontAwesome iconf) {
         return iconFont(iconf);
+    }
+    
+    public IconBuilder styleClass(String styleClass) {
+        icon.getStyleClass().add(styleClass);
+        return this;
     }
     
     public IconBuilder size(double size) {
