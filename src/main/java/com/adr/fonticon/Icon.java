@@ -17,6 +17,7 @@
 
 package com.adr.fonticon;
 
+import javafx.geometry.VPos;
 import javafx.scene.text.Text;
 
 /**
@@ -28,5 +29,6 @@ public class Icon extends Text {
         return new Icon();
     }
     private Icon() {
+        setTextOrigin(VPos.TOP);
     } 
 }
