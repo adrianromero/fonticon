@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'application'
 
 group = 'com.github.adrianromero'
-version = '1.2.3'
+version = '1.2.4'
 
 mainClassName = 'com.adr.fonticon.Demo'
 
