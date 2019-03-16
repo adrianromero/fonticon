@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2018 Adrián Romero Corchado.
+//    Copyright (C) 2018-2019 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
@@ -29,7 +29,7 @@ import javafx.scene.text.Text;
  * @author adrian
  */
 public class Picture extends Text {
-    private FontAwesome iconf = null;
+    private IconFontGlyph iconf = null;
     private Color color = null;
     private Color shine = null;
     
@@ -37,13 +37,13 @@ public class Picture extends Text {
         setTextOrigin(VPos.TOP);   
     }
 
-    public FontAwesome getIconAwesome() {
+    public IconFontGlyph getIconFontGlyph() {
         return iconf;
     }
     
-    public void setIconAwesome(FontAwesome iconf) {
+    public void setIconFontGlyph(IconFontGlyph iconf) {
         getProperties().put("ICONLABEL", iconf.toString());
-        setText(iconf.getString());
+        setText(iconf.getText());
         setFont(Font.font(iconf.getFontName(), getFont().getSize()));
     }    
     
