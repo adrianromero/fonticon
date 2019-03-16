@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2016 Adrián Romero Corchado.
+//    Copyright (C) 2016-2019 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
@@ -17,29 +17,33 @@
 
 package com.adr.fonticon;
 
+import java.awt.Font;
+
 /**
  *
  * @author adrian
  */
-public class FontAwesomeList implements IconFont {
+public class IconFontText implements IconFont {
     
     private final String text;
+    private final String name;
     
-    public FontAwesomeList(FontAwesome... icons) {
-        StringBuilder s = new StringBuilder();
-        for (FontAwesome iconf1 : icons) {
-            s.append(iconf1.getChar());
-        }
-        text = s.toString();
+    public IconFontText(String text, String name) {
+        this.text = text;
+        this.name = name;
+    }
+    
+    public IconFontText(String text) {
+        this(text, Font.MONOSPACED);
     }
 
     @Override
-    public String getString() {
+    public String getText() {
         return text;
     }
 
     @Override
     public String getFontName() {
-        return FontAwesome.AWESOMEFONT;
+        return name;
     }
 }

@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2014-2016 Adrián Romero Corchado.
+//    Copyright (C) 2019 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
@@ -22,7 +22,6 @@ package com.adr.fonticon;
  * @author adrian
  */
 public interface IconFont {
-  
+    public String getText();
     public String getFontName();
-    public String getString();
 }

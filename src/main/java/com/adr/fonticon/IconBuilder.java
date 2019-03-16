@@ -1,5 +1,5 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2014-2017 Adrián Romero Corchado.
+//    Copyright (C) 2014-2019 Adrián Romero Corchado.
 //
 //    This file is part of FontIcon
 //
@@ -19,53 +19,36 @@ package com.adr.fonticon;
 
 import com.adr.fonticon.decorator.FillPaint;
 import com.adr.fonticon.decorator.Shine;
+import javafx.geometry.VPos;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
-import javafx.util.Builder;
+import javafx.scene.text.Text;
 
 /**
  *
  * @author adrian
  */
-public class IconBuilder implements Builder<Icon> {
+public class IconBuilder {
     
-    private Icon icon;
+    private Text icon;
     
     public static IconBuilder create(IconFont iconf, double size) {
         
         IconBuilder builder = new IconBuilder();
-        builder.icon = Icon.create();
+        builder.icon = new Text(iconf.getText());
+        builder.icon.setTextOrigin(VPos.TOP);
         builder.icon.getProperties().put("ICONLABEL", iconf.toString());
-        builder.icon.setText(iconf.getString());
         builder.icon.setFont(Font.font(iconf.getFontName(), size));
         return builder;        
     }   
     
     public static IconBuilder create(IconFont icon) {
         return create(icon, 14.0);
-    }
+    }   
     
-    public static IconBuilder create() {      
-        IconBuilder builder = new IconBuilder();
-        builder.icon = Icon.create();
-        return builder;        
-    }        
-    
-    @Override
-    public Icon build() {
+    public Text build() {
         return icon;
-    }
-    
-    public IconBuilder iconFont(IconFont iconf) {
-        icon.getProperties().put("ICONLABEL", iconf.toString());
-        icon.setText(iconf.getString());
-        icon.setFont(Font.font(iconf.getFontName(), icon.getFont().getSize()));
-        return this;
-    }
-    
-    public IconBuilder iconAwesome(FontAwesome iconf) {
-        return iconFont(iconf);
     }
     
     public IconBuilder styleClass(String styleClass) {
@@ -73,11 +56,6 @@ public class IconBuilder implements Builder<Icon> {
         return this;
     }
     
-    public IconBuilder size(double size) {
-        icon.setFont(Font.font(icon.getFont().getFamily(), size));
-        return this;
-    }
-
     public IconBuilder fill(Paint fill) {
         return apply(new FillPaint(fill));
     }

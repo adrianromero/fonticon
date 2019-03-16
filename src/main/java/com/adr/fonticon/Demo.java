@@ -1,7 +1,7 @@
 //    FontIcon is a JavaFX library to use FontIcons
-//    Copyright (C) 2014 Adrián Romero Corchado.
+//    Copyright (C) 2014-2019 Adrián Romero Corchado.
 //
-//    This file is part of FontAwesome
+//    This file is part of FontIcon
 //
 //     Licensed under the Apache License, Version 2.0 (the "License");
 //     you may not use this file except in compliance with the License.
@@ -55,22 +55,15 @@ public class Demo extends Application {
         flow.setPrefSize(650.0, 500.0);
         
         flow.getChildren().addAll(
-                createButton(IconBuilder.create(IonIcons.ION_LOADING_A, 48.0).apply(new Rotate()).build()),
-                createButton(IconBuilder.create(FontAwesome.FA_ANDROID, 48.0).apply(new FillPaint(Color.RED.darker())).build()),
-                createButton(IconBuilder.create(FontAwesome.FA_BANK, 48.0).apply(new ShadowHole(Color.MEDIUMBLUE)).build()),
-                createButton(IconBuilder.create(FontAwesome.FA_APPLE, 48.0).apply(new ShadowHole(Color.WHITE)).build()),
-                createButton(IconBuilder.create(FontAwesome.FA_BELL, 48.0).apply(new ShadowHigh()).color(Color.LIGHTGREY).build()),
-                createButton(IconBuilder.create(FontAwesome.FA_FILTER, 48.0).apply(new ShadowHigh()).color(Color.GREEN).build()),                
-                createButton(IconBuilder.create(FontAwesome.FA_BOMB, 48.0).apply(new ShadowHigh()).color(Color.RED).build()),
-                createButton(IconBuilder.create(IonIcons.ION_ALERT, 48.0).apply(new ShadowHigh()).color(Color.BLUE).build()),
-                createButton(IconBuilder.create(OpenIconic.ACCOUNT_LOGIN, 48.0).apply(new ShadowHole(Color.GRAY)).build()),
-                createButton(IconBuilder.create(Octicons.OCTICON_ALERT, 48.0).apply(new ShadowHole(Color.YELLOW)).build()),
-                createButton(IconBuilder.create(WeatherIcons.WI_CLOUDY, 48.0).apply(new ShadowHole(Color.WHITE)).build()),                
-//                createButton("Stacked test 1", new StackPane(
-//                        IconBuilder.create(FontAwesome.FA_SQUARE, 48.0).classes("fi-icondarkblue", "fi-stack-base").build(),
-//                        IconBuilder.create(FontAwesome.FA_REFRESH, 32.0).classes("fi-iconwhite", "fi-plain").build())),
+                createButton(IconBuilder.create(IconFontGlyph.FA_BRANDS_ANDROID, 48.0).apply(new FillPaint(Color.RED.darker())).build()),
+                createButton(IconBuilder.create(IconFontGlyph.FA_SOLID_LANDMARK, 48.0).apply(new ShadowHole(Color.MEDIUMBLUE)).build()),
+                createButton(IconBuilder.create(IconFontGlyph.FA_BRANDS_APPLE, 48.0).apply(new ShadowHole(Color.WHITE)).build()),
+                createButton(IconBuilder.create(IconFontGlyph.FA_REGULAR_BELL, 48.0).apply(new ShadowHigh()).color(Color.LIGHTGREY).build()),
+                createButton(IconBuilder.create(IconFontGlyph.FA_SOLID_FILTER, 48.0).apply(new ShadowHigh()).color(Color.GREEN).build()),                
+                createButton(IconBuilder.create(IconFontGlyph.FA_SOLID_BOMB, 48.0).apply(new ShadowHigh()).color(Color.RED).build()),
+                createButton(IconBuilder.create(IconFontGlyph.FA_SOLID_CIRCLE_NOTCH, 48.0).apply(new Rotate()).build()),
                 createButton("Stacked test 2", new StackPane(                        
-                        IconBuilder.create(FontAwesome.FA_CIRCLE_THIN, 48.0).apply(new Shine(Color.LIME)).build(),
+                        IconBuilder.create(IconFontGlyph.FA_REGULAR_CIRCLE, 48.0).apply(new Shine(Color.LIME)).build(),
                         new Label("31")))
                 );
         
@@ -81,14 +74,7 @@ public class Demo extends Application {
         t.setContent(p);
         tabpane.getTabs().add(t);
         
-        addFontIcon(tabpane, FontAwesome.class.getSimpleName(), FontAwesome.values());
-        addFontIcon(tabpane, IonIcons.class.getSimpleName(), IonIcons.values());
-        addFontIcon(tabpane, Octicons.class.getSimpleName(), Octicons.values());
-        addFontIcon(tabpane, OpenIconic.class.getSimpleName(), OpenIconic.values());
-        addFontIcon(tabpane, WeatherIcons.class.getSimpleName(), WeatherIcons.values());
-        addFontIcon(tabpane, Material.class.getSimpleName(), Material.values());
-        addFontIcon(tabpane, Holo.class.getSimpleName(), Holo.values());
-
+        addFontIcon(tabpane, IconFont.class.getSimpleName(), IconFontGlyph.values());
         Scene scene = new Scene(tabpane);        
         stage.setScene(scene);
         stage.show();
@@ -125,6 +111,7 @@ public class Demo extends Application {
         b.setMaxSize(200.0, 120.0);
         b.setPrefSize(200.0, 120.0);
         b.setContentDisplay(ContentDisplay.TOP);
+        b.setMnemonicParsing(false);
         return b;
     }
     
