@@ -20,26 +20,11 @@ package com.adr.fonticon;
 import javafx.scene.text.Font;
 
 /**
- *  Font Awesome 5.7.2 by @davegandy - https://fontawesome.com/ - @fontawesome
- *  License - https://fontawesome.com/license/free (Font: SIL OFL 1.1, CSS: MIT License)
- * 
- *  Weather Icons 2.0.10
- *  Author - Erik Flowers - erik@helloerik.com
- *  Email: erik@helloerik.com
- *  Twitter: http://twitter.com/Erik_UX
- *  ------------------------------------------------------------------------------
- *  Maintained at http://erikflowers.github.io/weather-icons
+ * Font Awesome 5.7.2 by @davegandy - https://github.com/FortAwesome/Font-Awesome
+ * (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  *
- *  License
- *  ------------------------------------------------------------------------------
- *  - Font licensed under SIL OFL 1.1 -
- *    http://scripts.sil.org/OFL
- *  - CSS, SCSS and LESS are licensed under MIT License -
- *    http://opensource.org/licenses/mit-license.html
- *  - Documentation licensed under CC BY 3.0 -
- *    http://creativecommons.org/licenses/by/3.0/
- *  - Inspired by and works great as a companion with Font Awesome
- *    "Font Awesome by Dave Gandy - http://fontawesome.io"
+ * Weather Icons 2.0.10 by Erik Flowers https://erikflowers.github.io/weather-icons/
+ * (Fonts: SIL OFL 1.1, Code: MIT License, Documentation: CC BY 3.0)
  *
  * @author adrian
  */
