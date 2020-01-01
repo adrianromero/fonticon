@@ -15,9 +15,10 @@
 //     See the License for the specific language governing permissions and
 //     limitations under the License.
 
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'application'
+plugins {
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.0.8'
+}
 
 group = 'com.github.adrianromero'
 version = '2.0.100'
@@ -29,10 +30,17 @@ description = """"""
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+compileJava {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
 
 repositories {
     mavenCentral()
-    jcenter()
+}
+
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
@@ -42,18 +50,4 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 
 artifacts {
     archives sourcesJar
-}
-
-install {
-  repositories.mavenInstaller {
-    pom.project {
-      licenses {
-        license {
-          name 'The Apache Software License, Version 2.0'
-          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-          distribution 'repo'
-        }
-      }
-    }
-  }
 }
