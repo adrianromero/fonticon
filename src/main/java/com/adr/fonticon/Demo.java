@@ -17,6 +17,7 @@
 package com.adr.fonticon;
 
 import javafx.application.Application;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -25,10 +26,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  *
@@ -39,9 +42,9 @@ public class Demo extends Application {
     @Override
     public void start(Stage stage) {
 
-        Scene scene = new Scene(getFontIconNode(IconFontGlyph.values()));
+        Scene scene = new Scene(createBrowser(IconFontGlyph.values()));
         scene.getStylesheets().add(getClass().getResource("/com/adr/fonticon/style/browser.css").toExternalForm());
-        stage.setTitle("Icon Font");
+        stage.setTitle("Icon Font Browser");
         stage.setScene(scene);
         stage.show();
     }
@@ -52,7 +55,14 @@ public class Demo extends Application {
         };
     }
 
-    private Parent getFontIconNode(IconFont[] icons) {
+    private Parent createBrowser(IconFont[] icons) {
+
+        TextField search = new TextField();
+        search.setPromptText("search...");
+        search.getStyleClass().add("search");
+
+        VBox searchcontainer = new VBox(search);
+        searchcontainer.getStyleClass().add("search-container");
 
         FlowPane flow = new FlowPane();
         flow.getStyleClass().add("flow-icon");
@@ -65,19 +75,58 @@ public class Demo extends Application {
 
         DemoDetails details = new DemoDetails();
 
-        VBox box = new VBox(p, details.getNode());
+        VBox box = new VBox(searchcontainer, p, details.getNode());
 
-        boolean clean = true;
+        // Bind actions
+        Debouncer deb = new Debouncer(Duration.millis(250.0), ev -> {
+            filter(flow, details, icons, search.getText());
+        });
+        search.textProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
+            deb.play();
+        });
+
+        // Execute initial action
+        filter(flow, details, icons, search.getText());
+
+        return box;
+    }
+
+    public boolean matchesFilter(String name, String filter) {
+
+        if (filter == null) {
+            return true;
+        }
+        String[] filters = filter.split("\\s+");
+        if (filters.length == 0) {
+            return true;
+        }
+
+        String uname = name.toUpperCase();
+        for (String s : filters) {
+            if (!uname.contains(s.toUpperCase())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void filter(FlowPane flow, DemoDetails details, IconFont[] icons, String filter) {
+
+        boolean isDetailsClear = true;
+        details.clear();
+        flow.getChildren().clear();
+
         for (IconFont icon : icons) {
+            if (!matchesFilter(icon.toString(), filter)) {
+                continue;
+            }
             EventHandler<ActionEvent> handler = displayDetails(icon, details);
-            if (clean) {
-                clean = false;
+            if (isDetailsClear) {
+                isDetailsClear = false;
                 handler.handle(new ActionEvent());
             }
             flow.getChildren().add(createButton(IconBuilder.create(icon, 28.0).styleClass("icon-fill").build(), handler));
         }
-
-        return box;
     }
 
     private Button createButton(Node graph, EventHandler<ActionEvent> ev) {

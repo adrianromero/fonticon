@@ -54,6 +54,12 @@ public class DemoDetails {
         return box;
     }
 
+    public void clear() {
+        title.setText("");
+        sizer.getChildren().clear();
+        sizer2.getChildren().clear();
+    }
+
     public void displayDetails(IconFont icon) {
         title.setText(icon.toString());
         sizer.getChildren().clear();

@@ -17,6 +17,10 @@
 //     limitations under the License.
 */
 
+.search-container {
+    -fx-padding:5px;
+}
+
 .flow-icon {
     -fx-padding: 5px;
     -fx-vgap: 0px;
@@ -40,7 +44,7 @@
 }
 
 .button-icon {
-    -fx-font-size: 8px;
+    -fx-font-size: 10px;
 
     -fx-background-color: transparent, transparent;
     -fx-background-insets: 0, 2;
@@ -48,11 +52,11 @@
     -fx-alignment: center;
     -fx-padding: 2px;
 
-    -fx-pref-width: 80;
+    -fx-pref-width: 120;
     -fx-pref-height: 60;
-    -fx-min-width: 80;
+    -fx-min-width: 120;
     -fx-min-height: 60;
-    -fx-max-width: 80;
+    -fx-max-width: 120;
     -fx-max-height: 60;
 }
 
@@ -65,6 +69,5 @@
 .button-icon:armed {
     -fx-background-color: lightgray, lightgray;
 }
-
 .button-icon:armed .icon-fill {
 }
