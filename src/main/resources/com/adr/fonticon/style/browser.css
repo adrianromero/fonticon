@@ -1,0 +1,71 @@
+/*
+//    FontIcon is a JavaFX library to use FontIcons
+//    Copyright (C) 2019 Adrián Romero Corchado.
+//
+//    This file is part of FontIcon
+//
+//     Licensed under the Apache License, Version 2.0 (the "License");
+//     you may not use this file except in compliance with the License.
+//     You may obtain a copy of the License at
+//
+//         http://www.apache.org/licenses/LICENSE-2.0
+//
+//     Unless required by applicable law or agreed to in writing, software
+//     distributed under the License is distributed on an "AS IS" BASIS,
+//     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//     See the License for the specific language governing permissions and
+//     limitations under the License.
+*/
+
+
+.flow-icon {
+    -fx-padding: 5px;
+    -fx-vgap: 0px;
+    -fx-hgap: 0px;
+}
+
+.title-icon {
+    -fx-font-size: 18px;
+    -fx-padding: 5px;
+}
+
+.sizer-icon {
+    -fx-alignment: center;
+    -fx-padding: 5px;
+    -fx-spacing: 15px;
+    -fx-pref-height: 60px;
+}
+
+.icon-size {
+    -fx-fill: #505050;
+}
+
+.button-icon {
+    -fx-font-size: 8px;
+
+    -fx-background-color: transparent, transparent;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 0, 0;
+    -fx-alignment: center;
+    -fx-padding: 2px;
+
+    -fx-pref-width: 80;
+    -fx-pref-height: 60;
+    -fx-min-width: 80;
+    -fx-min-height: 60;
+    -fx-max-width: 80;
+    -fx-max-height: 60;
+}
+
+.button-icon .icon-fill {
+    -fx-fill: #505050;
+}
+.button-icon:hover {
+    -fx-background-color: derive(lightgray, 30%), derive(lightgray, 30%);
+}
+.button-icon:armed {
+    -fx-background-color: lightgray, lightgray;
+}
+
+.button-icon:armed .icon-fill {
+}
