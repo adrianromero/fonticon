@@ -35,6 +35,9 @@ import javafx.scene.paint.Color;
 public class IconDetails {
 
     private final Label title;
+    private final Label description1;
+    private final Label description2;
+    private final Label description3;
     private final Label terms;
     private final HBox sizer;
     private final HBox sizer2;
@@ -43,6 +46,15 @@ public class IconDetails {
     public IconDetails() {
         title = new Label();
         title.getStyleClass().add("title-icon");
+
+        description1 = new Label();
+        description1.getStyleClass().add("description-icon");
+
+        description2 = new Label();
+        description2.getStyleClass().add("description-icon");
+
+        description3 = new Label();
+        description3.getStyleClass().add("description-icon");
 
         terms = new Label();
         terms.getStyleClass().add("terms-icon");
@@ -53,7 +65,7 @@ public class IconDetails {
         sizer2 = new HBox();
         sizer2.getStyleClass().add("sizer-icon");
 
-        box = new VBox(title, terms, sizer, sizer2);
+        box = new VBox(title, description1, description2, description3, terms, sizer, sizer2);
     }
 
     public Node getNode() {
@@ -62,6 +74,9 @@ public class IconDetails {
 
     public void clear() {
         title.setText("");
+        description1.setText("");
+        description2.setText("");
+        description3.setText("");
         terms.setText("");
         sizer.getChildren().clear();
         sizer2.getChildren().clear();
@@ -69,6 +84,22 @@ public class IconDetails {
 
     public void displayDetails(IconFont icon) {
         title.setText(icon.toString());
+        if (icon.toString().startsWith("FA_")) {
+            description1.setText("Font Awesome 5.12.0 by @davegandy");
+            description2.setText("https://github.com/FortAwesome/Font-Awesome");
+            description3.setText("(Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)");
+
+        } else if (icon.toString().startsWith("WI_")) {
+            description1.setText("Weather Icons 2.0.10 by Erik Flowers");
+            description2.setText("https://erikflowers.github.io/weather-icons");
+            description3.setText("(Fonts: SIL OFL 1.1, Code: MIT License, Documentation: CC BY 3.0)");
+
+        } else {
+            description1.setText("");
+            description2.setText("");
+            description3.setText("");
+
+        }
         terms.setText(String.join(", ", icon.getTerms()));
         sizer.getChildren().clear();
         sizer.getChildren().addAll(

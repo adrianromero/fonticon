@@ -16,17 +16,15 @@
 //     limitations under the License.
 package com.adr.fonticon;
 
-/**
- * Font Awesome 5.12.0 by @davegandy -
- * https://github.com/FortAwesome/Font-Awesome (Icons: CC BY 4.0, Fonts: SIL OFL
- * 1.1, Code: MIT License)
- *
- * Weather Icons 2.0.10 by Erik Flowers
- * https://erikflowers.github.io/weather-icons/ (Fonts: SIL OFL 1.1, Code: MIT
- * License, Documentation: CC BY 3.0)
- *
- * @author adrian
- */
+//
+// Font Awesome 5.12.0 by @davegandy
+// https://github.com/FortAwesome/Font-Awesome
+// (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+//
+// Weather Icons 2.0.10 by Erik Flowers
+// https://erikflowers.github.io/weather-icons
+// (Fonts: SIL OFL 1.1, Code: MIT License, Documentation: CC BY 3.0)
+//
 public enum IconFontGlyph implements IconFont {
     FA_BRANDS_500PX("FA_BRANDS_500PX"),
     FA_BRANDS_ACCESSIBLE_ICON("FA_BRANDS_ACCESSIBLE_ICON"),
