@@ -40,7 +40,7 @@ import javafx.util.Duration;
  *
  * @author adrian
  */
-public class Demo extends Application {
+public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
@@ -52,7 +52,7 @@ public class Demo extends Application {
         stage.show();
     }
 
-    private EventHandler<ActionEvent> displayDetails(IconFont icon, DemoDetails details) {
+    private EventHandler<ActionEvent> displayDetails(IconFont icon, IconDetails details) {
         return (ActionEvent ev) -> {
             details.displayDetails(icon);
         };
@@ -76,7 +76,7 @@ public class Demo extends Application {
         p.setFocusTraversable(false);
         VBox.setVgrow(p, Priority.ALWAYS);
 
-        DemoDetails details = new DemoDetails();
+        IconDetails details = new IconDetails();
 
         VBox box = new VBox(searchcontainer, p, details.getNode());
 
@@ -123,7 +123,7 @@ public class Demo extends Application {
         return false;
     }
 
-    private void filter(FlowPane flow, DemoDetails details, IconFont[] icons, String filter) {
+    private void filter(FlowPane flow, IconDetails details, IconFont[] icons, String filter) {
 
         boolean isDetailsClear = true;
         details.clear();

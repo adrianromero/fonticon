@@ -32,7 +32,7 @@ import javafx.scene.paint.Color;
  *
  * @author adrian
  */
-public class DemoDetails {
+public class IconDetails {
 
     private final Label title;
     private final Label terms;
@@ -40,7 +40,7 @@ public class DemoDetails {
     private final HBox sizer2;
     private final VBox box;
 
-    public DemoDetails() {
+    public IconDetails() {
         title = new Label();
         title.getStyleClass().add("title-icon");
 

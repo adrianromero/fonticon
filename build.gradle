@@ -23,7 +23,7 @@ plugins {
 group = 'com.github.adrianromero'
 version = '2.0.100'
 
-mainClassName = 'com.adr.fonticon.browser.Demo'
+mainClassName = 'com.adr.fonticon.browser.Main'
 
 description = """"""
 
