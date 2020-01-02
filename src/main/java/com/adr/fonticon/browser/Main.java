@@ -69,7 +69,7 @@ public class Main extends Application {
 
         FlowPane flow = new FlowPane();
         flow.getStyleClass().add("flow-icon");
-        flow.setPrefSize(800.0, 480.0);
+        flow.setPrefSize(820.0, 480.0);
 
         ScrollPane p = new ScrollPane(flow);
         p.setFitToWidth(true);

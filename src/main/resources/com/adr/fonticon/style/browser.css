@@ -18,29 +18,29 @@
 */
 
 .search-container {
-    -fx-padding:5px;
+    -fx-padding: 0.5em;
 }
 
 .flow-icon {
-    -fx-padding: 5px;
-    -fx-vgap: 0px;
-    -fx-hgap: 0px;
+    -fx-padding: 0.5em;
+    -fx-vgap: 0em;
+    -fx-hgap: 0em;
 }
 
 .title-icon {
-    -fx-font-size: 18px;
-    -fx-padding: 5px;
+    -fx-font-size: 1.5em;
+    -fx-padding: 0.5em;
 }
 
 .terms-icon {
-    -fx-padding: 5px;
+    -fx-padding: 0.5em;
 }
 
 .sizer-icon {
     -fx-alignment: center;
-    -fx-padding: 5px;
-    -fx-spacing: 15px;
-    -fx-pref-height: 60px;
+    -fx-padding: 0.5em;
+    -fx-spacing: 1.5em;
+    -fx-pref-height: 3.0em;
 }
 
 .icon-size {
@@ -48,20 +48,20 @@
 }
 
 .button-icon {
-    -fx-font-size: 10px;
+    -fx-font-size: 0.8em;
 
     -fx-background-color: transparent, transparent;
-    -fx-background-insets: 0, 2;
-    -fx-background-radius: 0, 0;
+    -fx-background-insets: 0em, 0.2em;
+    -fx-background-radius: 0em, 0em;
     -fx-alignment: center;
-    -fx-padding: 2px;
+    -fx-padding: 0.2em;
 
-    -fx-pref-width: 120;
-    -fx-pref-height: 60;
-    -fx-min-width: 120;
-    -fx-min-height: 60;
-    -fx-max-width: 120;
-    -fx-max-height: 60;
+    -fx-pref-width: 10em;
+    -fx-pref-height: 5em;
+    -fx-min-width: 10em;
+    -fx-min-height: 5em;
+    -fx-max-width: 10em;
+    -fx-max-height: 5em;
 }
 
 .button-icon .icon-fill {
