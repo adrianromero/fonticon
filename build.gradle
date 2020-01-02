@@ -21,7 +21,7 @@ plugins {
 }
 
 group = 'com.github.adrianromero'
-version = '2.0.100'
+version = '2.0.200'
 
 mainClassName = 'com.adr.fonticon.browser.Main'
 
