@@ -91,7 +91,7 @@ public class Demo extends Application {
         return box;
     }
 
-    public boolean matchesFilter(String name, String filter) {
+    private boolean matchesFilter(IconFont icon, String filter) {
 
         if (filter == null) {
             return true;
@@ -100,14 +100,24 @@ public class Demo extends Application {
         if (filters.length == 0) {
             return true;
         }
-
-        String uname = name.toUpperCase();
         for (String s : filters) {
-            if (!uname.contains(s.toUpperCase())) {
+            if (!matchesAnyTerm(icon.toString(), icon.getTerms(), s.toUpperCase())) {
                 return false;
             }
         }
         return true;
+    }
+
+    private boolean matchesAnyTerm(String name, String[] terms, String ucasefilter) {
+        if (name.toUpperCase().contains(ucasefilter)) {
+            return true;
+        }
+        for (String t : terms) {
+            if (t.toUpperCase().contains(ucasefilter)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void filter(FlowPane flow, DemoDetails details, IconFont[] icons, String filter) {
@@ -117,7 +127,7 @@ public class Demo extends Application {
         flow.getChildren().clear();
 
         for (IconFont icon : icons) {
-            if (!matchesFilter(icon.toString(), filter)) {
+            if (!matchesFilter(icon, filter)) {
                 continue;
             }
             EventHandler<ActionEvent> handler = displayDetails(icon, details);

@@ -33,6 +33,7 @@ import javafx.scene.paint.Color;
 public class DemoDetails {
 
     private final Label title;
+    private final Label terms;
     private final HBox sizer;
     private final HBox sizer2;
     private final VBox box;
@@ -41,13 +42,16 @@ public class DemoDetails {
         title = new Label();
         title.getStyleClass().add("title-icon");
 
+        terms = new Label();
+        terms.getStyleClass().add("terms-icon");
+
         sizer = new HBox();
         sizer.getStyleClass().add("sizer-icon");
 
         sizer2 = new HBox();
         sizer2.getStyleClass().add("sizer-icon");
 
-        box = new VBox(title, sizer, sizer2);
+        box = new VBox(title, terms, sizer, sizer2);
     }
 
     public Node getNode() {
@@ -56,12 +60,14 @@ public class DemoDetails {
 
     public void clear() {
         title.setText("");
+        terms.setText("");
         sizer.getChildren().clear();
         sizer2.getChildren().clear();
     }
 
     public void displayDetails(IconFont icon) {
         title.setText(icon.toString());
+        terms.setText(String.join(", ", icon.getTerms()));
         sizer.getChildren().clear();
         sizer.getChildren().addAll(
                 IconBuilder.create(icon, 12.0).styleClass("icon-size").build(),

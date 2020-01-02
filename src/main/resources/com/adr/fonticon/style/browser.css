@@ -32,6 +32,10 @@
     -fx-padding: 5px;
 }
 
+.terms-icon {
+    -fx-padding: 5px;
+}
+
 .sizer-icon {
     -fx-alignment: center;
     -fx-padding: 5px;
