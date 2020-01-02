@@ -14,8 +14,11 @@
 //     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //     See the License for the specific language governing permissions and
 //     limitations under the License.
-package com.adr.fonticon;
+package com.adr.fonticon.browser;
 
+import com.adr.fonticon.IconBuilder;
+import com.adr.fonticon.IconFont;
+import com.adr.fonticon.IconFontGlyph;
 import javafx.application.Application;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
