@@ -35,7 +35,7 @@ To install the library add:
        maven { url "https://jitpack.io" }
    }
    dependencies {
-       compile 'com.github.adrianromero:fonticon:2.0.200'
+       compile 'com.github.adrianromero:fonticon:2.0.210'
    }
    ```
 
