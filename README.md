@@ -5,24 +5,19 @@ FontIcon is a JavaFX library to use Font Icons.
 
 This library includes the most popular icon fonts to be used easily in JavaFX projects. It also includes utilities to colorize, style and animate the icons with a minimal effort. See the examples to start using the icons.
 
+![Demo examples](https://raw.github.com/adrianromero/fonticon/master/screenshot-demo.png)
+
 Examples
 ========
 
 ```java
-IconBuilder.create(IconFontGlyph.FA_SOLID_BOOK, 48.0).styleClass("icon-size").build()
-IconBuilder.create(IconFontGlyph.FA_SOLID_BRAIN, 52.0).color(Color.LIGHTGRAY).shine(Color.YELLOW).build()
-IconBuilder.create(IconFontGlyph.FA_REGULAR_IMAGE, 52.0).apply(new LightOn(Color.AQUA)).build()
-IconBuilder.create(IconFontGlyph.FA_REGULAR_LEMON, 52.0).apply(new LightOff()).build()
-IconBuilder.create(IconFontGlyph.FA_BRANDS_CREATIVE_COMMONS, 52.0).color(Color.RED).apply(new ShadowHigh(Color.BLUE)).build()
-IconBuilder.create(IconFontGlyph.WI_THERMOMETER, 52.0).apply(new ShadowHole(Color.AZURE)).build()
+IconBuilder.create(IconFontGlyph.FA_SOLID_BOOK, 48.0).styleClass("icon-size").build();
+IconBuilder.create(IconFontGlyph.FA_SOLID_BRAIN, 52.0).color(Color.LIGHTGRAY).shine(Color.YELLOW).build();
+IconBuilder.create(IconFontGlyph.FA_REGULAR_IMAGE, 52.0).apply(new LightOn(Color.AQUA)).build();
+IconBuilder.create(IconFontGlyph.FA_REGULAR_LEMON, 52.0).apply(new LightOff()).build();
+IconBuilder.create(IconFontGlyph.FA_BRANDS_CREATIVE_COMMONS, 52.0).color(Color.RED).apply(new ShadowHigh(Color.BLUE)).build();
+IconBuilder.create(IconFontGlyph.WI_THERMOMETER, 52.0).apply(new ShadowHole(Color.AZURE)).build();
 ```
-
-Screenshots
-===========
-
-![Demo examples](https://raw.github.com/adrianromero/fonticon/master/screenshot-demo.png)
-
-Demo examples
 
 Install
 =======
